@@ -1,0 +1,125 @@
+$c-bg             : #fff;
+$c-primary        : #BCA888;
+$c-primary-lighten: lighten($c-primary, 15%);
+$c-accent         : #ccc;
+
+.featers {
+    ul {
+        margin : 0;
+        padding: 0;
+    }
+
+    a {
+        color          : #000;
+        text-decoration: none;
+    }
+
+    $stepbar-height: 50px;
+    counter-reset  : step;
+    overflow-x     : auto;
+
+    .stepbar-container {
+        display      : table;
+        table-layout : fixed;
+        width        : 100%;
+        border-radius: 3px;
+        overflow     : hidden;
+        min-width    : 700px;
+    }
+
+    .stepbar-item {
+        position        : relative;
+        display         : table-cell;
+        cursor          : pointer;
+        background-color: $c-primary-lighten;
+        width           : 100%;
+        transition      : width 200ms ease;
+
+        &:before,
+        &:after {
+            content       : "";
+            position      : absolute;
+            pointer-events: none;
+            z-index       : 1;
+        }
+
+        &:before {
+            $before-size     : 10px;
+            right            : -($stepbar-height + ($stepbar-height / 2) - ($before-size / 2));
+            top              : -($before-size);
+            border           : ($stepbar-height / 2 + $before-size) solid rgba(255, 255, 255, 0);
+            border-left-color: $c-bg;
+        }
+
+        &:after {
+            right            : -($stepbar-height);
+            top              : 0;
+            border           : ($stepbar-height / 2) solid rgba(255, 255, 255, 0);
+            border-left-color: $c-primary-lighten;
+        }
+
+        &:first-child {
+            .stepbar-link {
+                padding-left: 0;
+            }
+        }
+
+        &:last-child {
+
+            &:before,
+            &:after {
+                content: none;
+            }
+        }
+
+        &:hover {
+            width: 115%;
+        }
+
+        &.current {
+            background-color: $c-primary;
+
+            &:after {
+                border-left-color: $c-primary;
+            }
+
+            ~.stepbar-item {
+                background-color: $c-accent;
+
+                &:after {
+                    border-left-color: $c-accent;
+                }
+            }
+        }
+    }
+
+    .stepbar-link {
+        display          : block;
+        height           : $stepbar-height;
+        line-height      : $stepbar-height;
+        padding-left     : ($stepbar-height / 2);
+        text-align       : center;
+        font-size        : 1.125em;
+        counter-increment: step 1;
+        font-weight      : 500;
+
+        &:before {
+            content     : counter(step) '.';
+            margin-right: 10px;
+        }
+    }
+}
+
+/* Base Styling */
+
+body {
+    margin     : 0;
+}
+
+// .container {
+//     position : absolute;
+//     top      : 50%;
+//     left     : 50%;
+//     transform: translate(-50%, -50%);
+//     width    : 95%;
+// }

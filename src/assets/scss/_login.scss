@@ -1,0 +1,97 @@
+.login-body {
+    display            : flex;
+    position           : relative;
+    height             : 100vh;
+    background         : aquamarine;
+    justify-content    : center;
+    align-items        : center;
+    // background         : url('../images//bedroom-1.jpg') no-repeat;
+    background-size    : cover;
+    background-position: center center;
+
+    .login {
+        width           : 400px;
+        height          : auto;
+        padding         : 20px;
+        background-color: rgba(black, 0.6);
+        border-radius   : 20px;
+        border          : 5px solid #EDE1D5;
+        box-shadow      : 0 0 30px #EDE1D5;
+        backdrop-filter : blur(5px);
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        position        : absolute;
+
+        .form {
+            width: 100%;
+            h2 {
+                color     : white;
+                text-align: center;
+            }
+
+            .loginGroup {
+                margin-bottom: 10px;
+
+                label {
+                    color      : #fff;
+                    font-weight: 500;
+                    width      : 100%;
+                    font-size  : 18px;
+                }
+
+                input {
+                    background-color   : #fff;
+                    transition-duration: .3s;
+                    position           : relative;
+                    width              : 100%;
+                    padding            : 10px 12px;
+                    font-weight        : 400;
+                    appearance         : none;
+                    outline            : none;
+                    border             : 1px solid #ccc;
+                    font-size          : 18px;
+                    z-index            : 0;
+                    line-height        : 24px;
+                    border-radius      : 4px;
+                    caret-color        : skyblue;
+                }
+            }
+        }
+
+        .btn-style {
+            color : #eeeeee;
+            margin: 10px 0px;
+
+            span {
+                &:nth-child(2) {
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    .register {
+        backface-visibility: hidden;
+        transform          : rotateY(180deg);
+        transition         : all 0.3s ease-out;
+
+        &.active {
+            transform : rotateY(0deg);
+            transition: all 0.3s ease-out;
+        }
+    }
+
+    .loginPage {
+        backface-visibility: hidden;
+        transform          : rotateY(180deg);
+        transition         : all 0.3s ease-out;
+
+        &.active {
+            transform : rotateY(0deg);
+            transition: all 0.3s ease-out;
+        }
+    }
+
+}

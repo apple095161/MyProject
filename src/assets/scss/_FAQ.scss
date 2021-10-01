@@ -1,0 +1,51 @@
+.faq {
+    .faq-menu {
+        .faq-item {
+            .faq-item-body {
+                ul {
+                    border: 1px solid black;
+
+                    li {
+                        width: 100%;
+                    }
+                }
+
+                table {
+                    width         : 100% !important;
+                    border-spacing: 0;
+                    margin        : 0 0 1em;
+
+                    tbody {
+                        tr {
+                            td {
+                                width : 25%;
+                                border: 1px dotted #ccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.faq-main {
+    .faq-box {
+        .gutter {
+            .faq-context {
+                table {
+                    width: 100% !important;
+
+                    tr {
+                        td {
+                            width : 25%;
+                            border: 1px dotted #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

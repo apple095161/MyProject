@@ -1,0 +1,20 @@
+@import './reset';
+// @import "~bootstrap/scss/bootstrap"; bootstarp
+@import '~bootstrap/scss/bootstrap'; // bootstrapvue
+@import '~bootstrap-vue/src/index.scss'; // bootstrapvue
+@import './layout';
+@import './responsivelayout';
+@import './FAQ';
+@import './progressbar';
+@import './Dashborad';
+@import './login';
+@import './shopPageLayout';
+
+
+//alert message
+
+.alert-message {
+    position : fixed;
+    z-index  : 9999;
+    transform: translate(50%, 50%);
+}
