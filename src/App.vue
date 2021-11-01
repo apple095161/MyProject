@@ -12,7 +12,7 @@
       <!-- <vue-page-transition name="fade-in-down">
         
       </vue-page-transition> -->
-      <router-view :itemChange="itemChange" />
+      <router-view :itemChange="itemChange" :isLogin="isLogin" />
     </div>
 
     <a
@@ -51,6 +51,14 @@ export default {
   },
   watch: {
     $route(to, from) {
+      if (to.query.utm_medium && to.query.utm_source) {
+        let date = new Date();
+        let addDay = date.setDate(date.getDate() + 5);
+        document.cookie = `WebSource=${to.query.utm_source}; expires=${new Date(
+          addDay,
+        )};path=/;`;
+      }
+
       this.RouterChangerInnerWidth = window.innerWidth;
       if (to.meta.LoginVerification && localStorage.Jwt) {
         let base64Url = localStorage.Jwt.split('.')[1];

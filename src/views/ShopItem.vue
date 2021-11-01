@@ -1050,11 +1050,17 @@ export default {
 ::v-deep .shop-content-box {
   .product-detail {
     .product-detail-box {
+      text-align: center;
       p {
         color: black !important;
         img {
-          max-width: 100%;
+          width: 100%;
+          // max-width: 100%;
         }
+      }
+      img {
+        width: 100%;
+        // max-width: 100%;
       }
     }
   }

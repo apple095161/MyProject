@@ -1,5 +1,5 @@
 <template>
-  <div style="background: white" v-if="$route.meta.keepFormAlive">
+   <div style="background: white" v-if="$route.meta.keepFormAlive">
     <b-container fluid class="dah-item-box py-3">
       <button class="btn btn-primary" @click="modalShow" v-if="!itemshow">
         新增商品

@@ -1,18 +1,6 @@
 <template>
   <div>
-    <!-- <Newheader></Newheader> -->
     <div class="container faq pt-120">
-      <!-- <div class="btnGroup">
-        <div
-          class="F-btn"
-          v-for="btn in items"
-          :key="btn.id"
-          @click="changeList(btn)"
-        >
-          {{ btn.context }}
-        </div>
-      </div>
-      <router-view :change="change"></router-view> -->
       <div class="row faq-menu">
         <div
           class="col-md-12 faq-item"
@@ -20,7 +8,6 @@
           :key="item.id"
           :class="{ open: item.isClick }"
         >
-          <!-- <div class="index">{{ index + 1 }}.</div> -->
           <button class="faq-item-title" @click="MouseDown($event)">
             <i class="fas fa-chevron-down mr-3"></i> {{ item.title }}
           </button>
@@ -28,7 +15,6 @@
         </div>
       </div>
     </div>
-    <!-- <Newfooter></Newfooter> -->
   </div>
 </template>
 <script>
